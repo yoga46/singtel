@@ -26,10 +26,16 @@ public class Runner {
 
 	@BeforeClass
 	public static void lanuchBrowser() {
-		 System.setProperty("webdriver.gecko.driver","C:\\Users\\yoga\\Browser\\geckodriver.exe");
-		 driver = new FirefoxDriver();
-		//System.setProperty("webdriver.chrome.driver", "C:\\Users\\yoga\\Browser\\chromedriver.exe");
-		//driver = new ChromeDriver();
+		/*
+		 * Uncomment below lines (30 and 31) to run in Firefox and comment the line 32
+		 * and 33
+		 */
+		// System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir") +
+		// "\\src\\test\\resources\\browsers\\geckodriver.exe");
+		// driver = new FirefoxDriver();
+		System.setProperty("webdriver.chrome.driver",
+				System.getProperty("user.dir") + "\\src\\test\\resources\\browsers\\chromedriver.exe");
+		driver = new ChromeDriver();
 		driver.manage().window().maximize();
 	}
 
